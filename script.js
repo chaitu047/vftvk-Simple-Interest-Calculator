@@ -10,11 +10,11 @@ function compute() {
     }
     //show the result only if principal amount is valid
     if (res_visible) {
-        var rate = document.getElementById("rate").value;
-        var years = document.getElementById("years").value;
-        var interest = principal * years * rate / 100;
+        var rate = parseInt(document.getElementById("rate").value);
+        var years = parseInt(document.getElementById("years").value);
+        var interest = parseInt(principal) * years * rate / 100;
         var year = new Date().getFullYear() + parseInt(years);
-        var totalAmount = interest + principal;
+        var totalAmount = interest + parseInt(principal);
         document.getElementById("result").innerHTML = `If you deposit <mark>${principal}</mark>,<br/>at an interest rate of <mark>${rate}</mark>%.<br/>You will receive an amount of <mark>${totalAmount}</mark>,<br/>in the year <mark>${year}</mark>`;
     }
 }
